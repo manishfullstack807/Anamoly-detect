@@ -11,3 +11,6 @@ httpx
 python-dotenv
 pandas
 openpyxl
+streamlit
+requests
+python-multipart

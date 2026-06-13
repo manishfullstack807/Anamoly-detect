@@ -1,7 +1,8 @@
+import os
 import streamlit as st
 import requests
 
-API_URL = "http://localhost:8000"
+API_URL = os.getenv("API_URL", "http://localhost:8000")
 
 MODELS = {
     "Llama 3.1 8B (Fast)": "meta/llama-3.1-8b-instruct",
