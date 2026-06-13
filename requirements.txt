@@ -1,0 +1,13 @@
+langchain-nvidia-ai-endpoints
+langgraph
+langchain
+langchain-core
+chromadb
+apscheduler
+fastapi
+uvicorn
+pydantic-settings
+httpx
+python-dotenv
+pandas
+openpyxl
