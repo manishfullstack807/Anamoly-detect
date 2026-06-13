@@ -1,9 +1,12 @@
 import shutil
+from pathlib import Path
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from agent.memory import memory
 from agent.main import run_agent
 from agent.verify import verify
+
+Path("data").mkdir(exist_ok=True)
 
 app = FastAPI(title="Supply Chain CLAW API")
 

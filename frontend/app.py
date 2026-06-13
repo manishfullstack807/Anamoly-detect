@@ -65,9 +65,15 @@ if st.button("Analyze Now", type="primary", disabled=not api_key):
     with st.spinner(f"Nemotron ({selected_model_label}) is analyzing your supply chain..."):
         result = requests.post(
             f"{API_URL}/run",
-            json={"api_key": api_key, "model": selected_model}
+            json={"api_key": api_key, "model": selected_model},
+            timeout=120
         )
-        data = result.json()
+
+    if result.status_code != 200:
+        st.error(f"Backend error {result.status_code}: {result.text[:300]}")
+        st.stop()
+
+    data = result.json()
 
     st.info(f"Model used: `{data.get('model_used', selected_model)}`")
 
